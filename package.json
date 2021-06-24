@@ -1,0 +1,40 @@
+{
+  "name": "mean-resident-profile",
+  "version": "1.0.0",
+  "description": "crud with upload ",
+  "main": "server",
+  "scripts": {
+    
+    "client": "cd client && ng serve --open",
+		"server": "nodemon server",
+		"dev": "concurrently --kill-others-on-fail \"npm run client\" \"npm run server\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/herzliyaaa/mean-resident-profile.git"
+  },
+  "keywords": [
+    "mean",
+    "mongodb",
+    "express",
+    "angular",
+    "node"
+  ],
+  "author": "herzlia jane",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/herzliyaaa/mean-resident-profile/issues"
+  },
+  "homepage": "https://github.com/herzliyaaa/mean-resident-profile#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.2.1",
+    "fs": "0.0.1-security",
+    "mongoose": "^5.12.14",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.2",
+    "nodemon": "^2.0.7"
+  }
+}
