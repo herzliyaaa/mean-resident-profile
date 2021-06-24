@@ -1,0 +1,113 @@
+
+
+<div class="residents-section">
+
+
+
+
+
+    <div class="header">
+      <h1>Resident Directory</h1>
+    </div>
+  
+    <div class="content">
+  
+      
+      <div class="search">
+        <!-- <mat-form-field>
+              <mat-label>Filter</mat-label>
+               <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input> 
+            </mat-form-field> -->
+           
+        <button class="add-resident-btn" routerLinkActive="active" routerLink="/add-resident">
+          <span>
+            <!-- <i-bs class= "bi-plus-square" name="plus-square" alt = ""></i-bs>  -->
+          </span>
+          <p>Add Resident</p>
+  
+        </button>
+      </div>
+  
+      <div class="table">
+        <table mat-table [dataSource]="dataSource">
+  
+          <!-- Position Column -->
+  
+  
+          <!-- Name Column -->
+          <ng-container matColumnDef="first_name">
+            <th mat-header-cell *matHeaderCellDef> FIRST NAME </th>
+            <td mat-cell *matCellDef="let resident" routerLink="/edit-resident/{{resident._id}}"> {{resident.first_name}} </td>
+          </ng-container>
+  
+          <ng-container matColumnDef="middle_name">
+            <th mat-header-cell *matHeaderCellDef> MIDDLE NAME </th>
+            <td mat-cell *matCellDef="let resident"> {{resident.middle_name}} </td>
+          </ng-container>
+  
+          <ng-container matColumnDef="last_name">
+            <th mat-header-cell *matHeaderCellDef> LAST NAME </th>
+            <td mat-cell *matCellDef="let resident"> {{resident.last_name}} </td>
+          </ng-container>
+  
+          <ng-container matColumnDef="birth_date">
+            <th mat-header-cell *matHeaderCellDef> DATE OF BIRTH </th>
+            <td mat-cell *matCellDef="let resident"> {{resident.birth_date | date: "MM/dd/yyyy" }} </td>
+          </ng-container>
+          <!-- "yyyy-mm-dd HH:mm:ss" -->
+          <!-- <ng-container matColumnDef="email">
+            <th mat-header-cell *matHeaderCellDef> EMAIL </th>
+            <td mat-cell *matCellDef="let resident"> {{resident.email}} </td>
+          </ng-container> -->
+  
+          <ng-container matColumnDef="phone_number">
+            <th mat-header-cell *matHeaderCellDef> PHONE NUMBER </th>
+            <td mat-cell *matCellDef="let resident"> {{resident.phone_number}} </td>
+          </ng-container>
+  
+          <ng-container matColumnDef="sex">
+            <th mat-header-cell *matHeaderCellDef> SEX </th>
+            <td mat-cell *matCellDef="let resident"> {{resident.sex}} </td>
+          </ng-container>
+  
+          <!-- <ng-container matColumnDef="civil">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> CIVIL STATUS </th>
+              <td mat-cell *matCellDef="let resident"> {{resident.civil}} </td>
+            </ng-container>
+  -->
+           
+  
+  
+          <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef> ACTIONS </th>
+            <td mat-cell *matCellDef="let resident; let i = index;">
+              <!-- <button mat-raised-button color="accent" routerLink="/edit-resident/{{resident._id}}" >Edit</button>  -->
+            
+              <span class="delete" >
+                <button mat-raised-button color="accent" (click)="removeResident(resident, i)" >Delete</button>
+              </span>
+              
+               <button mat-raised-button color="accent" routerLink="/view-resident/{{resident._id}}" > View </button>  
+            
+           
+  
+          </ng-container>
+  
+        
+  
+  
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  
+          <!-- Row shown when there is no matching data. -->
+          <!-- <tr class="mat-row" *matNoDataRow> </tr> -->
+  
+        </table>
+  
+      </div>
+    </div>
+  
+    <div class="pagination">
+      <mat-paginator [pageSize]="10" showFirstLastButtons></mat-paginator>
+  
+    </div>

@@ -1,0 +1,148 @@
+
+<section>
+    <div class="header">
+      <h1>Resident Profile</h1>
+  
+      <button class="back-btn" routerLinkActive="active" routerLink="/residents-list">
+        Back
+      </button>
+    </div>
+    <!-- <div class="add-info">
+                      <h5>ID:</h5>
+                      <input type="number" />
+                  </div> -->
+  
+    <div class="res-content">
+      <div class="resident-profile">
+        
+             
+        <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+          <div class="infos">
+           
+            <div class="drag-area">
+  
+                
+  
+               <img [src]= "editForm.value.imageFile" >  
+               <!-- [alt]= "editForm.value.imageFile"  -->
+                      
+                  </div> 
+                  <!-- <input class="file-input"  type="file"> -->
+            <div class="form-group">
+              <h5>First Name:</h5>
+              <input class="form-control" type="text" name="first_name" formControlName="first_name">
+              <!-- error -->
+              <div class="invalid-feedback" *ngIf="submitted && myForm.first_name.errors?.required">
+                  Name is required.
+              </div>
+          </div>
+          
+          <div class="form-group">
+              <h5>Middle Name:</h5>
+              <input class="form-control" type="text" name="middle_name" formControlName="middle_name">
+              <!-- error -->
+              <div class="invalid-feedback" *ngIf="submitted && myForm.middle_name.errors?.required">
+                  Name is required.
+              </div>
+          </div>
+          
+          <div class="form-group">
+              <h5>Last Name:</h5>
+              <input class="form-control" type="text" name="last_name" formControlName="last_name">
+              <!-- error -->
+              <div class="invalid-feedback" *ngIf="submitted && myForm.last_name.errors?.required">
+                  Name is required.
+              </div>
+          </div>
+  
+  
+          <div class="form-group">
+              <h5>Date of Birth:</h5>
+              <input class="form-control" type="date" name="birth_date" formControlName="birth_date">
+              <!-- error -->
+              <div class="invalid-feedback" *ngIf="submitted && myForm.birth_date.errors?.required">
+                  Name is required.
+              </div>
+          </div>
+  
+          <div class="form-group">
+              <h5>Address:</h5>
+              <input class="form-control" type="text" name="address" formControlName="address">
+              <!-- error -->
+              <div class="invalid-feedback" *ngIf="submitted && myForm.address.errors?.required">
+                  Name is required.
+              </div>
+          </div>
+  
+          
+  
+          <div class="form-group">
+              <h5>Occupation:</h5>
+              <input class="form-control" type="text" name="occupation" formControlName="occupation">
+              <!-- error -->
+              <div class="invalid-feedback" *ngIf="submitted && myForm.occupation.errors?.required">
+                  Name is required.
+              </div>
+          </div>
+  
+          <div class="form-group">
+              <h5>Email:</h5>
+              <input class="form-control" type="text" formControlName="email">
+              <!-- error -->
+             
+              <div class="invalid-feedback" *ngIf="submitted && myForm.email.errors?.pattern">
+                  Enter valid email.
+              </div>
+          </div>
+  
+          <div class="form-group">
+              <h5>Phone Number</h5>
+              <input class="form-control" type="text" formControlName="phone_number">
+              <!-- error -->
+              <div class="invalid-feedback" *ngIf="submitted && myForm.phone_number.errors?.required">
+                  Enter your phone number.
+              </div>
+              <div class="invalid-feedback" *ngIf="submitted && myForm.phone_number.errors?.pattern">
+                  Enter Numbers Only
+              </div>
+          </div>
+  
+          <div class="form-group">
+              <h5>Civil Status:</h5>
+              <select class="custom-select form-control" name="sex"
+                  (change)="civil_statusProfile($any($event.target).value)" formControlName="civil_status">
+                  <option value="" selected disabled hidden>--</option>
+                  <option *ngFor="let civilStatusProfile of CivilStatusProfile" value="{{civilStatusProfile}}">
+                      {{civilStatusProfile}}</option>
+              </select>
+              <!-- error -->
+              <div class="invalid-feedback" *ngIf="submitted && myForm.civil_status.errors?.required">
+                  Choose designation.
+              </div>
+          </div>
+  
+          <div class="form-group">
+              <h5>Sex:</h5>
+              <select class="custom-select form-control" name="sex"
+                  (change)="updateProfile($any($event.target).value)" formControlName="sex">
+                  <option value="" selected disabled hidden>--</option>
+                  <option *ngFor="let genderProfile of GenderProfile" value="{{genderProfile}}">
+                      {{genderProfile}}</option>
+              </select>
+              <!-- error -->
+              <div class="invalid-feedback" *ngIf="submitted && myForm.sex.errors?.required">
+                  Choose designation.
+              </div>
+          </div>
+  
+          
+            <div class="form-group">
+              <button class="save-btn" type="submit">Save</button>
+            </div>
+            
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+  
