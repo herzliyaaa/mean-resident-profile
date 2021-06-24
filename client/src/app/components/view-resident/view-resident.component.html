@@ -1,101 +1,105 @@
 
-<section>
-    <div class="header">
-      <h1>Resident Profile</h1>
-  
-      <button class="back-btn" routerLinkActive="active" routerLink="/residents-list">
-        Back
-      </button>
+<section class="section">
+    <div class="title-header">
+        <div>
+            <h2 class="title">Resident Profile</h2>
+        </div>
+        <div class="back-container">
+            <button class="back-button" routerLinkActive="active" routerLink="/residents-list">Back</button>
+        </div>
     </div>
-    <!-- <div class="add-info">
-                      <h5>ID:</h5>
-                      <input type="number" />
-                  </div> -->
-  
-    <div class="res-content">
-      <div class="resident-profile">
-        
-             
-      
-          <div class="infos">
-           
-            <div class="drag-area">
-  
+
+    
+    
+    <div class="form-container" *ngIf = Resident >
+        <div class="upload-container">
+            <div class="preview">
+                <img [src]="Resident.imageFile" [alt]="Resident.imageFile">
+            </div>
+
+            
+        </div>
+
+        <h2 class="profile-details">Profile Details</h2>
+        <div class="input-container">
+            <div class="left-input-container">
+            
+                    <div class="form-group">
+                        <label class="input-label">First Name:</label>
+                       {{Resident.first_name}}
+                        <br><br>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="input-label">Middle Name:</label>
+                        {{Resident.middle_name}}
+                        <br> 
+                        <br>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="input-label">Last Name:</label>
+                        {{Resident.last_name}}
+                        <br>
+                        <br>
+                        
+                    </div>
+
+                    <div class="form-group">
+                        <label class="input-label">Date of Birth:</label>
+                        {{Resident.birth_date}}
+                        <br>
+                        <br>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="input-label">Address:</label>
+                        {{Resident.address}}
+                        <br>
+                        <br>
+                    </div>
+            </div>
+
+
+            <div class="right-input-container">
+                <div class="form-group">
+                    <label class="input-label">Sex:</label>
+                    {{Resident.sex}}
+                    <br>
+                    <br>
+                </div>
+
+                <div class="form-group">
+                    <label class="input-label">Email:</label>
+                    {{Resident.email}}
+                    <br>
+                    <br>
+                </div>
+
+                <div class="form-group">
+                    <label class="input-label">Number:</label>
+                   {{Resident.phone_number}}
+                    <br>
+                    <br>
+                </div>
+
+                <div class="form-group">
+                    <label class="input-label">Civil Status:</label>
+                    {{Resident.civil_status}}
+                    <br>
+                    <br>
+                </div>
+
+                <div class="form-group">
+                    <label class="input-label">Occupation:</label>
+                    {{Resident.occupation}}
+                    <br>
+                    <br>
+                </div>
+
+            </div>
+        </div> 
                 
-  
-               <img src= "file" >  
-               <!-- [alt]= "editForm.value.imageFile"  -->
-                      
-                  </div> 
-                  <!-- <input class="file-input"  type="file"> -->
-            <div class="form-group">
-              <h5>First Name:</h5>
-              <h5>First Name:</h5>
-            
-          </div>
-          
-          <div class="form-group">
-              <h5>Middle Name:</h5>
-              <h5>First Name:</h5>
-            
-          </div>
-          
-          <div class="form-group">
-              <h5>Last Name:</h5>
-              <h5>First Name:</h5>
-              
-          </div>
-  
-  
-          <div class="form-group">
-              <h5>Date of Birth:</h5>
-              <h5>First Name:</h5>
-             
-          </div>
-  
-          <div class="form-group">
-              <h5>Address:</h5>
-              <h5>First Name:</h5>
-          </div>
-  
-          
-  
-          <div class="form-group">
-              <h5>Occupation:</h5>
-              <h5>First Name:</h5>
-             
-          </div>
-  
-          <div class="form-group">
-              <h5>Email:</h5>
-              <h5>First Name:</h5>
-         
-          </div>
-  
-          <div class="form-group">
-              <h5>Phone Number</h5>
-              <h5>First Name:</h5>
-
-          </div>
-  
-          <div class="form-group">
-              <h5>Civil Status:</h5>
-              <h5>First Name:</h5>
-             
-            
-          </div>
-  
-          <div class="form-group">
-              <h5>Sex:</h5>
-              <h5>First Name:</h5>
-          </div>
-  
-          
-           
-            
-          </div>
-
-      </div>
     </div>
-  </section>
-  
+
+</section>

@@ -1,7 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
-
-
 import { Resident } from '../../interface/Resident';
 import { Router, ActivatedRoute} from "@angular/router";
 import { ResidentService } from '../../service/resident.service';
@@ -13,17 +10,27 @@ import { ResidentService } from '../../service/resident.service';
 })
 export class ViewResidentComponent implements OnInit {
 
-//    Residents: any = [];
+Resident: Resident[] = [];
 
-//   constructor(private residentService: ResidentService,    private actRoute: ActivatedRoute,) {
+
+
+constructor(private residentService: ResidentService, private actRoute: ActivatedRoute,  public router: Router) {}
    
- ngOnInit() {  
+ ngOnInit() 
+ 
+ {    
+  let id = this.actRoute.snapshot.paramMap.get('id');
+  this.getResidentDetails(id);
+  
+     
   }
 
-// getResident(id: string) {
-//   this.residentService.getResident(id).subscribe((data: any) => {
 
-//   });
-// }
-//   }
+getResidentDetails(id:string) {
+  this.residentService.getResident(id).subscribe ((data: Resident[]) => {
+    this.Resident = data;
+  })
 }
+
+}
+
