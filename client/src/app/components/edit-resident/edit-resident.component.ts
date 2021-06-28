@@ -3,6 +3,7 @@ import { Resident } from '../../interface/Resident';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ResidentService } from '../../service/resident.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-edit-resident',
@@ -22,8 +23,10 @@ export class EditResidentComponent implements OnInit {
     public fb: FormBuilder,
     private actRoute: ActivatedRoute,
     private residentService: ResidentService,
-    private router: Router
-  ) {}
+    private router: Router,
+    private location: Location
+
+  ) { }
 
   ngOnInit() {
     this.updateResident();
@@ -69,7 +72,7 @@ export class EditResidentComponent implements OnInit {
   getResident(id: string) {
     this.residentService.getResident(id).subscribe((data: any) => {
       this.editForm.setValue({
-       imageFile: data['imageFile'],
+        imageFile: data['imageFile'],
         first_name: data['first_name'],
         middle_name: data['middle_name'],
         last_name: data['last_name'],
@@ -111,7 +114,10 @@ export class EditResidentComponent implements OnInit {
     });
   }
 
-  
+
+  goBack() {
+    this.location.back();
+  }
 
 
   onSubmit() {
@@ -122,7 +128,7 @@ export class EditResidentComponent implements OnInit {
       if (window.confirm('Are you sure?')) {
         let id = this.actRoute.snapshot.paramMap.get('id');
         this.residentService
-          .updateResident( id, this.editForm.value)
+          .updateResident(id, this.editForm.value)
           .subscribe(
             (res) => {
               this.router.navigateByUrl('/residents-list');

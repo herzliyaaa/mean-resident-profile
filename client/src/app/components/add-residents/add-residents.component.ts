@@ -11,7 +11,7 @@ import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 })
 export class AddResidentsComponent implements OnInit {
   preview: string;
-  submitted: false;
+  submitted: true;
   residentForm!: FormGroup;
   
   GenderProfile: any = ['Male', 'Female'];
@@ -58,7 +58,7 @@ export class AddResidentsComponent implements OnInit {
   }
 
   // Getter to access form control
-  get myForm() {
+  get addForm() {
     return this.residentForm.controls;
   }
 
@@ -82,7 +82,10 @@ uploadFile(event) {
 
 
   onSubmit() {
-
+    this.submitted = true;
+    if (!this.residentForm.valid) {
+      return false;
+    } else {
       this.residentService.createResident(this.residentForm.value).subscribe(
         (res) => {
           console.log('Resident successfully created!')
@@ -93,5 +96,5 @@ uploadFile(event) {
     }
   }
 
-
+}
 

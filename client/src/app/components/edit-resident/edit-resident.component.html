@@ -4,12 +4,12 @@
             <h2 class="title">Edit Resident Profile</h2>
         </div>
         <div class="back-container">
-            <button class="back-button" routerLinkActive="active" routerLink="/residents-list">Back</button>
+            <button class="back-button" (click)= "goBack()" >Back</button>
         </div>
     </div>
 
     
-    <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+    <form autocomplete="off" [formGroup]="editForm" (ngSubmit)="onSubmit()">
     <div class="form-container">
         <div class="upload-container">
             <div class="preview">
@@ -29,7 +29,7 @@
                             formControlName="first_name">
                             <br> 
                         <div class="invalid-feedback" *ngIf="submitted && myForm.first_name.errors?.required">
-                            Name is required.
+                            First Name is required.
                         </div>
                     </div>
 
@@ -39,7 +39,7 @@
                             formControlName="middle_name">
                             <br> 
                         <div class="invalid-feedback" *ngIf="submitted && myForm.middle_name.errors?.required">
-                            Name is required.
+                            Middle Name is required.
                         </div>
                     </div>
 
@@ -49,7 +49,7 @@
                             formControlName="last_name">
                         <br>
                         <div class="invalid-feedback" *ngIf="submitted && myForm.last_name.errors?.required">
-                            Name is required.
+                           Last Name is required.
                         </div>
                     </div>
 
@@ -58,7 +58,7 @@
                         <input placeholder="--" class="form-control" type="date" name="birth_date"
                             formControlName="birth_date">
                         <div class="invalid-feedback" *ngIf="submitted && myForm.birth_date.errors?.required">
-                            Name is required.
+                            Birth Date is required.
                         </div>
                     </div>
 
@@ -67,7 +67,7 @@
                         <input type="text" placeholder="Home Address" class="form-control" name="address"
                             formControlName="address">
                         <div class="invalid-feedback" *ngIf="submitted && myForm.address.errors?.required">
-                            Name is required.
+                            Address is required.
                         </div>
                     </div>
             </div>
@@ -111,7 +111,7 @@
                         </option>
                     </select>
                     <div class="invalid-feedback" *ngIf="submitted && myForm.civil_status.errors?.required">
-                        Choose designation.
+                        Civil Status is required.
                     </div>
                 </div>
 
@@ -120,7 +120,7 @@
                     <input type="text" id="ame" placeholder="please specify" class="form-control" name="occupation"
                         formControlName="occupation">
                     <div class="invalid-feedback" *ngIf="submitted && myForm.sex.errors?.required">
-                        Choose designation.
+                        Occupation is required.
                     </div>
                 </div>
 

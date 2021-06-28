@@ -1,105 +1,120 @@
-
 <section class="section">
     <div class="title-header">
         <div>
             <h2 class="title">Resident Profile</h2>
         </div>
         <div class="back-container">
-            <button class="back-button" routerLinkActive="active" routerLink="/residents-list">Back</button>
+            <button class="back-button" routerLinkActive="active" routerLink="/residents-list">
+                Back
+            </button>
         </div>
     </div>
 
-    
-    
-    <div class="form-container" *ngIf = Resident >
+    <div class="form-container" *ngIf="Resident">
         <div class="upload-container">
             <div class="preview">
-                <img [src]="Resident.imageFile" [alt]="Resident.imageFile">
+                <img [src]="Resident.imageFile" [alt]="Resident.imageFile" />
             </div>
-
-            
         </div>
 
         <h2 class="profile-details">Profile Details</h2>
         <div class="input-container">
             <div class="left-input-container">
-            
-                    <div class="form-group">
-                        <label class="input-label">First Name:</label>
-                       {{Resident.first_name}}
-                        <br><br>
-                    </div>
+                <div class="form-group">
+                    <label class="input-label">
+                        <h3>First Name:</h3>
+                    </label>
+                    <h5>{{ Resident.first_name }}</h5>
+                    <br /><br />
+                </div>
 
-                    <div class="form-group">
-                        <label class="input-label">Middle Name:</label>
-                        {{Resident.middle_name}}
-                        <br> 
-                        <br>
-                    </div>
+                <div class="form-group">
+                    <label class="input-label">
+                        <h3>Middle Name:</h3>
+                    </label>
+                    <h5>{{ Resident.middle_name }}</h5>
+                    <br />
+                    <br />
+                </div>
 
-                    <div class="form-group">
-                        <label class="input-label">Last Name:</label>
-                        {{Resident.last_name}}
-                        <br>
-                        <br>
-                        
-                    </div>
+                <div class="form-group">
+                    <label class="input-label">
+                        <h3>Last Name:</h3>
+                    </label>
+                    <h5>{{ Resident.last_name }}</h5>
+                    <br />
+                    <br />
+                </div>
 
-                    <div class="form-group">
-                        <label class="input-label">Date of Birth:</label>
-                        {{Resident.birth_date}}
-                        <br>
-                        <br>
-                    </div>
+                <div class="form-group">
+                    <label class="input-label">
+                        <h3>Date of Birth:</h3>
+                    </label>
+                    <h5>{{ Resident.birth_date }}</h5>
+                    <br />
+                    <br />
+                </div>
 
-                    <div class="form-group">
-                        <label class="input-label">Address:</label>
-                        {{Resident.address}}
-                        <br>
-                        <br>
-                    </div>
+                <div class="form-group">
+                    <label class="input-label">
+                        <h3>Address:</h3>
+                    </label>
+                    <h5>{{ Resident.address }}</h5>
+                    <br />
+                    <br />
+                </div>
             </div>
-
 
             <div class="right-input-container">
                 <div class="form-group">
-                    <label class="input-label">Sex:</label>
-                    {{Resident.sex}}
-                    <br>
-                    <br>
+                    <label class="input-label">
+                        <h3>Sex:</h3>
+                    </label>
+                    <h5>{{ Resident.sex }}</h5>
+                    <br />
+                    <br />
                 </div>
 
                 <div class="form-group">
-                    <label class="input-label">Email:</label>
-                    {{Resident.email}}
-                    <br>
-                    <br>
+                    <label class="input-label">
+                        <h3>Email:</h3>
+                    </label>
+                    <h5>{{ Resident.email }}</h5>
+                    <br />
+                    <br />
                 </div>
 
                 <div class="form-group">
-                    <label class="input-label">Number:</label>
-                   {{Resident.phone_number}}
-                    <br>
-                    <br>
+                    <label class="input-label">
+                        <h3>Number:</h3>
+                    </label>
+                    <h5>{{ Resident.phone_number }}</h5>
+                    <br />
+                    <br />
                 </div>
 
                 <div class="form-group">
-                    <label class="input-label">Civil Status:</label>
-                    {{Resident.civil_status}}
-                    <br>
-                    <br>
+                    <label class="input-label">
+                        <h3>Civil Status:</h3>
+                    </label>
+                    <h5>{{ Resident.civil_status }}</h5>
+                    <br />
+                    <br />
                 </div>
 
                 <div class="form-group">
-                    <label class="input-label">Occupation:</label>
-                    {{Resident.occupation}}
-                    <br>
-                    <br>
+                    <label class="input-label">
+                        <h3>Occupation:</h3>
+                    </label>
+                    <h5>{{ Resident.occupation }}</h5>
+                    <br />
+                    <br />
                 </div>
-
             </div>
-        </div> 
-                
-    </div>
 
+            <button mat-raised-button color="accent" class="editbtn" routerLink="/edit-resident/{{ Resident._id }}">
+                Edit
+            </button>
+        </div>
+    </div>
 </section>

@@ -9,7 +9,7 @@
     </div>
 
     
-    <form [formGroup]="residentForm" (ngSubmit)="onSubmit()">
+    <form autocomplete="off" [formGroup]="residentForm" (ngSubmit)="onSubmit()">
     <div class="form-container">
         <div class="upload-container">
             <div class="preview">
@@ -17,10 +17,10 @@
             </div>
 
             <div class="file-upload">
-                <input (change)="uploadFile($event)" class="upload-input" type="file" >
+                <input (change)="uploadFile($event)" class="upload-input" type="file"  >
             </div>
         </div>
-
+        
         <h2 class="profile-details">Profile Details</h2>
         <div class="input-container">
             <div class="left-input-container">
@@ -30,8 +30,8 @@
                         <input type="text" placeholder="First Name" class="form-control" name="first_name"
                             formControlName="first_name">
                             <br> 
-                        <div class="invalid-feedback" *ngIf="submitted && myForm.first_name.errors?.required">
-                            Name is required.
+                        <div class="invalid-feedback" *ngIf="submitted && addForm.first_name.errors?.required">
+                            First Name is required.
                         </div>
                     </div>
 
@@ -40,8 +40,8 @@
                         <input type="text" placeholder="Middle Name" class="form-control" name="middle_name"
                             formControlName="middle_name">
                             <br> 
-                        <div class="invalid-feedback" *ngIf="submitted && myForm.middle_name.errors?.required">
-                            Name is required.
+                        <div class="invalid-feedback" *ngIf="submitted && addForm.middle_name.errors?.required">
+                           Middle Name is required.
                         </div>
                     </div>
 
@@ -50,8 +50,8 @@
                         <input type="text" placeholder="Last Name" class="form-control" name="last_name"
                             formControlName="last_name">
                         <br>
-                        <div class="invalid-feedback" *ngIf="submitted && myForm.last_name.errors?.required">
-                            Name is required.
+                        <div class="invalid-feedback" *ngIf="submitted && addForm.last_name.errors?.required">
+                            Last Name is required.
                         </div>
                     </div>
 
@@ -59,8 +59,8 @@
                         <label class="input-label">Date of Birth:</label><br>
                         <input placeholder="--" class="form-control" type="date" name="birth_date"
                             formControlName="birth_date">
-                        <div class="invalid-feedback" *ngIf="submitted && myForm.birth_date.errors?.required">
-                            Name is required.
+                        <div class="invalid-feedback" *ngIf="submitted && addForm.birth_date.errors?.required">
+                            Birth Date is required.
                         </div>
                     </div>
 
@@ -68,8 +68,8 @@
                         <label class="input-label">Address:</label><br>
                         <input type="text" placeholder="Home Address" class="form-control" name="address"
                             formControlName="address">
-                        <div class="invalid-feedback" *ngIf="submitted && myForm.address.errors?.required">
-                            Name is required.
+                        <div class="invalid-feedback" *ngIf="submitted && addForm.address.errors?.required">
+                             Address is required.
                         </div>
                     </div>
             </div>
@@ -90,7 +90,7 @@
                 <div class="form-group">
                     <label class="input-label">Email:</label><br>
                     <input type="text" placeholder="example@gmail.com" class="form-control" formControlName="email">
-                    <div class="invalid-feedback" *ngIf="submitted && myForm.email.errors?.pattern">
+                    <div class="invalid-feedback" *ngIf="submitted && addForm.email.errors?.pattern">
                         Enter valid email.
                     </div>
                 </div>
@@ -98,7 +98,7 @@
                 <div class="form-group">
                     <label class="input-label">Number:</label><br>
                     <input type="text" placeholder="+63" class="form-control" formControlName="phone_number">
-                    <div class="invalid-feedback" *ngIf="submitted && myForm.phone_number.errors?.pattern">
+                    <div class="invalid-feedback" *ngIf="submitted && addForm.phone_number.errors?.pattern">
                         Enter Numbers Only
                     </div>
                 </div>
@@ -112,17 +112,17 @@
                             {{ civilStatusProfile }}
                         </option>
                     </select>
-                    <div class="invalid-feedback" *ngIf="submitted && myForm.civil_status.errors?.required">
-                        Choose designation.
+                    <div class="invalid-feedback" *ngIf="submitted && addForm.civil_status.errors?.required">
+                        Civil Status is required.
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="input-label">Occupation:</label><br>
-                    <input type="text" id="ame" placeholder="please specify" class="form-control" name="occupation"
+                    <input type="text" id="ame" placeholder="Please specify" class="form-control" name="occupation"
                         formControlName="occupation">
-                    <div class="invalid-feedback" *ngIf="submitted && myForm.sex.errors?.required">
-                        Choose designation.
+                    <div class="invalid-feedback" *ngIf="submitted && addForm.sex.errors?.required">
+                        Occupation is required.
                     </div>
                 </div>
 

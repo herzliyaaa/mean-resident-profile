@@ -9,20 +9,19 @@
   font-family: "Poppins" , sans-serif;
 }
 
-:root {
-  --primary-color: #1F375D;
-  --white-color: #f7f6fb;
-  --black-color: #1a1a2e;
-  --blue-light-color: #ADDFDE
-  --red-color: #d41e21;
-  --island-color: #97D5E0;
-  --blue-color: #01497c;
-}
+
 
 h1 {
   font-family: "Poppins", sans-serif;
   font-size: 30px;
   margin-left: 260px;
+}
+
+h3 {
+  font-size: 25px;
+  color: rgb(224, 194, 95);
+
+	text-transform: uppercase;
 }
 
 p {
@@ -188,5 +187,9 @@ body{
 
   .time-date {
     justify-content: center;
-    margin-left: 15%;
+   
+    text-align: center;
+    margin: auto;
+    margin-top: 10%;
+    margin-bottom: 10%;
   }

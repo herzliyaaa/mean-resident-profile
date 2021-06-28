@@ -7,9 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
+  today: number = Date.now();
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(): void { 
   }
 
 }

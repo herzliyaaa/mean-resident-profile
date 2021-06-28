@@ -26,8 +26,8 @@ constructor(private residentService: ResidentService, private actRoute: Activate
   }
 
 
-getResidentDetails(id:string) {
-  this.residentService.getResident(id).subscribe ((data: Resident[]) => {
+getResidentDetails(_id:string) {
+  this.residentService.getResident(_id).subscribe ((data: Resident[]) => {
     this.Resident = data;
   })
 }

@@ -14,6 +14,14 @@ body{
     overflow: hidden;
 }
 
+h5 {
+    margin-left: 3%;
+    display: inline;
+    text-align: left;
+    justify-items: left;
+    font-size: 17px;
+    
+}
 .section {
     width: 70%;
     height: 95vh;
@@ -35,7 +43,7 @@ body{
 .back-button {
     position: relative;
     margin-top: 20px;
-    border-radius: 10px;
+    border-radius: 12px;
 	border: 1px solid #1F375D;
 	background-color: #1F375D;
 	color: #FFFFFF;
@@ -46,11 +54,38 @@ body{
 	text-transform: uppercase;
 	transition: transform 80ms ease-in;
 }
-.back-button:focus {
+.back-button:hover{
     border: none;
     background-color: #00adb5;
 }
 
+
+.editbtn  {
+    border-radius: 12px;
+	border: 1px solid #1F375D;
+	background-color: #1F375D;
+    height: 50px;
+	color: #FFFFFF;
+	font-size: 16px;
+	font-weight: bold;
+	padding: 8px 22px;
+	letter-spacing: 2.5px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
+    position: absolute;
+    bottom: 13%;
+    right: 42%;
+}
+.editbtn:hover {
+    border: none;
+    background-color: #00adb5;
+}
+
+
+/* .editbtnDiv{
+    height: 50px;
+    width: 90px;
+} */
 .profile-details {
     text-align: center;
     margin-top: 25px;
@@ -76,7 +111,7 @@ body{
 .form-group {
     justify-content: center;
     margin: auto;
-    text-align: center;
+    text-align: left;
     position: relative;
     margin-top: 15px;
 }

@@ -46,7 +46,7 @@ body{
 	text-transform: uppercase;
 	transition: transform 80ms ease-in;
 }
-.back-button:focus {
+.back-button:hover {
     border: none;
     background-color: #00adb5;
 }
@@ -132,7 +132,7 @@ body{
 
 }
 
-.save-button:focus {
+.save-button:hover {
     border: none;
     background-color: #00adb5;
 }
